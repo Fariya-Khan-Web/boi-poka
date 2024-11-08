@@ -10,6 +10,7 @@ import Root from './components/Root/Root.jsx';
 import ErrorPage from './components/ErrorPage/ErrorPage.jsx';
 import Home from './components/Home/Home.jsx';
 import BookDetail from './components/BookDetail/BookDetail.jsx';
+import Listed from './components/Listed/Listed.jsx';
 
 const router = createBrowserRouter([
   {
@@ -27,7 +28,9 @@ const router = createBrowserRouter([
         element: <BookDetail/>
       },
       {
-        path: '/listed',
+        path: '/listedBooks',
+        loader: ()=> fetch('/booksData.json'),
+        element: <Listed/>
         
       },
       {
